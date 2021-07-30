@@ -11,6 +11,16 @@ public class TestSpring {
 
     //-----musicPlayer
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer secondMusicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+
+        //---test SCOPE
+        System.out.println("--- Test scope ---");
+        boolean comparsion = musicPlayer == secondMusicPlayer;
+        System.out.println("Comparsion musicPlayer and secondMusicPlayer: " + comparsion);
+
+        System.out.println("musicPlayer: " + musicPlayer);
+        System.out.println("secondMusicPlayer: " + secondMusicPlayer);
+        System.out.println("--------------");
 
         musicPlayer.playMusic();
 
