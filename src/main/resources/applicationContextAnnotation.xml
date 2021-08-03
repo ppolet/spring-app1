@@ -9,4 +9,5 @@
 
     <context:component-scan base-package="org.example.springcourseAnnotation" />
 
+    <context:property-placeholder location="musicPlayer.properties" />
 </beans>

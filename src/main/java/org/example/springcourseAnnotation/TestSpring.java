@@ -17,8 +17,25 @@ public class TestSpring {
 //        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 //        musicPlayer.playMusic();
 
-        Computer computer = context.getBean("computer", Computer.class);
-        System.out.println(computer);
+//        Computer computer = context.getBean("computer", Computer.class);
+//        System.out.println(computer);
+
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+
+        System.out.println(musicPlayer.getName());
+        System.out.println(musicPlayer.getVolume());
+
+        //---проверка @Scope (singleton, prototype)
+        ClassicalMusic classicalMusic1 = context.getBean("classicalMusic", ClassicalMusic.class);
+        ClassicalMusic classicalMusic2 = context.getBean("classicalMusic", ClassicalMusic.class);
+
+        System.out.println("Проверка равенства двух объектов после @Scope: " + (classicalMusic1 == classicalMusic2));
+
+        System.out.println();
+
+        //init и destroy методы с аннотациями @PostConstruct @PreDestroy
+        RockMusic rockMusic = context.getBean("rockMusic", RockMusic.class);
+
 
         context.close();
     }
