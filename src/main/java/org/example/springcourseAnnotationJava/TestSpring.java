@@ -24,7 +24,7 @@ public class TestSpring {
         System.out.println();
 
         //init и destroy методы с аннотациями @PostConstruct @PreDestroy
-        RockMusic rockMusic = context.getBean("rockMusic", RockMusic.class);
+        //RockMusic rockMusic = context.getBean("rockMusic", RockMusic.class);
 
         Computer computer = context.getBean("computer", Computer.class);
         System.out.println("Playing: " + computer.toString());

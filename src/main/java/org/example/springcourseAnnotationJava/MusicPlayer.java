@@ -29,14 +29,14 @@ public class MusicPlayer {
 
     private List<Music> listStyleMusic;
 
-    public MusicPlayer(List listStyleMusic) {
+    public MusicPlayer(List<Music> listStyleMusic) {
         this.listStyleMusic = listStyleMusic;
     }
 
     //---проигрывание 1 песни
     public String playMusic(){
         Random r = new Random();
-        return "Playing: " + listStyleMusic.get(r.nextInt(3)).getSong();
+        return "Playing: " + listStyleMusic.get(r.nextInt(listStyleMusic.size())).getSong();
     }
 
 }
